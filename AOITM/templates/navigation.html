@@ -2,7 +2,7 @@
     {% if request.user.is_anonymous %}
     <ul class="nav--actions">
         <li><a href="#" class="btn btn--small btn--without-border">Zaloguj</a></li>
-        <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
+        <li><a href="{% url 'register' %}" class="btn btn--small btn--highlighted">Załóż konto</a></li>
     </ul>
 
     {% else %}
