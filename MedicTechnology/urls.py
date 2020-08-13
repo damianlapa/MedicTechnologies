@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from techmed.views import FirstView, NewTechnology
+from AOITM.views import LandingPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('main-page', FirstView.as_view(), name='main-page'),
-    path('new-technology', NewTechnology.as_view(), name='new-technology')
+    # path('main-page', FirstView.as_view(), name='main-page'),
+    # path('new-technology', NewTechnology.as_view(), name='new-technology'),
+    path('', LandingPage.as_view(), name='landing-page'),
 ]
