@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from techmed.views import FirstView, NewTechnology
+# from techmed.views import FirstView, NewTechnology
 from AOITM.views import LandingPage
 
 urlpatterns = [
