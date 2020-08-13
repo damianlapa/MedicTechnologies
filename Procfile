@@ -1,1 +1,1 @@
-web: gunicorn PortfolioLab.wsgi
+web: gunicorn MedicTechnology.wsgi
