@@ -16,6 +16,7 @@
 <body>
 {% load static %}
 {% block content %}{% endblock %}
+{% block footer %}
 <footer>
     <div id="contact" class="contact">
         <h2>Skontaktuj się z nami</h2>
@@ -37,6 +38,7 @@
         </div>
     </div>
 </footer>
+{% endblock %}
 
 <script src="{% static 'js/app.js' %}"></script>
 </body>

@@ -17,22 +17,23 @@
         <div class="container container--85">
             <div class="stats--item">
                 <em>0</em>
-                <h3>Oddanych worków</h3>
+                <h3>Ocenionych technologii</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius est beatae, quod accusamus illum
                     tempora!</p>
             </div>
-
-            <div class="stats--item">
+            <!--
+            <div class="stats--item" style="display: none">
                 <em>0</em>
                 <h3>Wspartych organizacji</h3>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam magnam, sint nihil cupiditate
                     quas quam.</p>
             </div>
+            -->
 
         </div>
     </section>
 
-    <section id="steps" class="steps">
+    <section id="steps" class="steps" style="display: none">
         <h2>Wystarczą 4 proste kroki</h2>
 
         <div class="steps--container">
@@ -61,7 +62,7 @@
         <a href="#" class="btn btn--large">Załóż konto</a>
     </section>
 
-    <section id="about-us" class="about-us">
+    <section id="about-us" class="about-us" style="display: none">
         <div class="about-us--text">
             <h2>O nas</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt
@@ -71,7 +72,7 @@
         <div class="about-us--image"><img src="{% static 'images/about-us.jpg' %}" alt="People in circle"/></div>
     </section>
 
-    <section id="help" class="help">
+    <section id="help" class="help" style="display: none">
         <h2>Komu pomagamy?</h2>
 
         <ul class="help--buttons">
@@ -194,6 +195,8 @@
             -->
         </div>
     </section>
+{% endblock %}
+{% block footer %}
 {% endblock %}
 
 

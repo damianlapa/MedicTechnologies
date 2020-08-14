@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 # from techmed.views import FirstView, NewTechnology
-from AOITM.views import LandingPage, Register, ValidateAccount
+from AOITM.views import LandingPage, Register, ValidateAccount, Login, Logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('main-page', FirstView.as_view(), name='main-page'),
     # path('new-technology', NewTechnology.as_view(), name='new-technology'),
     path('', LandingPage.as_view(), name='landing-page'),
+    path('login', Login.as_view(), name='login'),
+    path('logout', Logout.as_view(), name='logout'),
     path('register', Register.as_view(), name='register'),
-    path('validate-account/<slug:token_value>', ValidateAccount.as_view(), name='validate-account')
+    path('validate-account/<slug:token_value>', ValidateAccount.as_view(), name='validate-account'),
 ]

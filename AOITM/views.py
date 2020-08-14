@@ -31,6 +31,32 @@ class LandingPage(View):
         return render(request, 'index.html', locals())
 
 
+class Login(View):
+
+    def get(self, request):
+        return render(request, 'login.html')
+
+    def post(self, request):
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        user = authenticate(username=email, password=password)
+
+        if user:
+            login(request, user)
+            return redirect('landing-page')
+
+        else:
+            return redirect('register')
+
+
+class Logout(View):
+
+    def get(self, request):
+        logout(request)
+        return redirect('login')
+
+
 class Register(View):
 
     def get(self, request):
@@ -53,15 +79,16 @@ class Register(View):
             html = """\
                         <html>
                           <body>
-                            <p>Hi,<br>
-                               Congratulations for create new account! Enter this link to activate your account: <br>
+                            <p>Witaj,<br>
+                               Gratulacje z okazji założenia konta w naszym serwisie. Otwórz przesłany link w celu
+                                weryfikacji adresu email: <br>
                                <a href="{}/{}">Activate Your Account</a>
                             </p>
                           </body>
                         </html>
                         """.format(os.environ.get('ACTIVATE_LINK'), user_token)
 
-            send_mail('New Account', '', 'Charity Donation', (email,), html_message=html)
+            send_mail('Aktywacja Nowego Konta', '', 'Algorytm OITM', (email,), html_message=html)
 
             return redirect('landing-page')
 
@@ -75,7 +102,7 @@ class ValidateAccount(View):
 
         if user.is_active:
 
-            statement = 'User was already activated!'
+            statement = 'Konto zostało już wcześniej aktywowane!'
 
             return render(request, 'statement.html', locals())
 
@@ -92,17 +119,18 @@ class ValidateAccount(View):
                 html = """\
                             <html>
                               <body>
-                                <p>Hi,<br>
-                                   We've created for you new token! Enter this link to activate your account: <br>
-                                   <a href="{}/{}" target="_blank">Activate Your Account</a>
+                                <p>Witaj,<br>
+                                Wygenerowaliśmy dla Ciebie nowy link aktywacyjny! 
+                                   Otwórz go w celu aktywacji konta: <br>
+                                   <a href="{}/{}" target="_blank">Aktywuj konto</a>
                                 </p>
                               </body>
                             </html>
                             """.format(os.environ.get('ACTIVATE_LINK'), new_token)
 
-                send_mail('Activate Account', '', 'Charity Donation', (user.email,), html_message=html)
+                send_mail('Aktywacja Konta', '', 'Algorytm OITM', (user.email,), html_message=html)
 
-                statement = 'Token out of date. We have send you new token to activate your account'
+                statement = 'Ten link stracił ważność. Na adres email został przesłany nowy link aktywacyjny.'
 
                 return render(request, 'statement.html', locals())
 
@@ -113,3 +141,5 @@ class ValidateAccount(View):
                 user_to_activate.save()
                 login(request, user_to_activate)
                 return redirect('landing-page')
+
+
