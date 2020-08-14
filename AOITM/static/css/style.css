@@ -849,11 +849,11 @@ form.form--contact textarea::placeholder {
 
 /* line 2, scss/modules/_header.scss */
 header.header--main-page {
-  background-image: url(../images/header-bg.jpg);
-  background-position: bottom left -30vh;
+  background-image: url(../images/pexels-photo-2280549.jpeg);
+  background-position: bottom left -40vh;
   background-repeat: no-repeat;
   background-size: 70vw;
-  height: 100vh;
+  height: 80vh;
 }
 
 @media (min-width: 990px) and (max-width: 1230px) {
