@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 # from techmed.views import FirstView, NewTechnology
-from AOITM.views import LandingPage, Register, ValidateAccount, Login, Logout
+from AOITM.views import LandingPage, Register, ValidateAccount, Login, Logout, NewTechnology
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +27,5 @@ urlpatterns = [
     path('logout', Logout.as_view(), name='logout'),
     path('register', Register.as_view(), name='register'),
     path('validate-account/<slug:token_value>', ValidateAccount.as_view(), name='validate-account'),
+    path('add-technology', NewTechnology.as_view(), name='add-technology')
 ]

@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="title-new-tech" style="background: aqua">
+    Nowa Technologia
+</div>
+
+<div>
+
+    <section class="form--steps">
+
+    <div class="form--steps-container">
+        <div class="form--steps-counter">Krok <span>1</span>/5</div>
+
+        <form style="display: block" class="form-new-tech">
+
+            <div data-step="1" class="active" >
+
+                <label ><h3>Jaki jest cel terapii?</h3>
+                    <select name="cel">
+                        <option value="wyleczenie"><h3>Wyleczenie</h3></option>
+                        <option value="nie-wyleczenie"><h3>Nie-wyleczenie</h3></option>
+                    </select>
+                </label>
+
+
+                <div class="form-group form-group--buttons">
+                    <button type="button" class="btn next-step">Dalej</button>
+                </div>
+            </div>
+
+            <div data-step="2" class="">
+
+                <div class="interwencja" style="border-style: double">
+
+                    <h3>Interwencja</h3>
+
+                    <label>Nazwa Handlowa:
+                        <input type="text" name="nazwa-handlowa">
+                    </label><br/>
+
+                    <label>Nazwa Substancji:
+                        <input type="text" name="nazwa-substancji">
+                    </label><br/>
+
+                </div>
+
+                <label>Komparator:
+                    <input type="text" name="komparator">
+                </label><br/>
+
+                <label>Obszar Terapeutyczny:
+                    <input type="radio" name="obszar-terapeutyczny" value="onkologia">Onkologia
+                    <input type="radio" name="obszar-terapeutyczny" value="hematoonkologia">Hematoonkologia
+                </label><br/>
+
+                <label>Opis krótki:
+                    <textarea name="opis-k"></textarea>
+                </label><br/>
+
+                <label>Opis długi:
+                    <textarea name="opis-k" id="opis-d"></textarea>
+                </label><br/>
+
+                <label>Choroba Ultra-rzadka?
+                    <select name="choroba-ultrarzadka" class="choroba-ultrarzadka">
+                        <option value="t">Tak</option>
+                        <option value="n">Nie</option>
+                    </select>
+                </label><br/>
+
+                <label class="epidemiologia">Epidemiologia:
+                    <textarea name="epidemiologia"></textarea>
+                </label><br/>
+
+                <label>5-letnie przezycie
+                    <input type="number" name="przezycie-5" min="0" max="100" placeholder="0">%
+                </label><br/>
+
+                <label>Ostatnia linia leczenia?
+                    <select name="ostatnia-linia">
+                        <option value="t">Tak</option>
+                        <option value="n">Nie</option>
+                    </select>
+                </label><br/>
+
+                <label>Stopień zaspokojenia potrzeby zdrowotnej
+                    <select name="stopien-zaspokojenia">
+                        <option value="NIEZASPOKOJONA">NIEZASPOKOJONA</option>
+                        <option value=">CZĘŚCIOWO ZASPOKOJONA">>CZĘSCIOWO ZASPOKOJONA</option>
+                        <option value="CZĘŚCIOWO ZASPOKOJONA">&lt;CZĘSCIOWO ZASPOKOJONA</option>
+                        <option value="ZASPOKOJONA">ZASPOKOJONA</option>
+
+                    </select>
+                </label><br/>
+
+                <label>Uzasadnienie:
+                    <textarea name="uzasadnienie"></textarea>
+                </label><br/>
+
+                <div style="border-style: double">
+
+                    <h3>Badanie na podstawie którego będzie dokonywana ocena</h3>
+
+                    <label>Rodzaj badania
+                        <select name="rodzaj-badania">
+                            <option value="RCT">RCT</option>
+                            <option value="Badanie jednoramienne">Badanie jednoramienne</option>
+                            <option value="Porównanie pośrednie">Porównanie pośrednie</option>
+                        </select>
+                    </label><br/>
+
+                    <label>Nazwa:
+                        <textarea name="nazwa"></textarea>
+                    </label><br/>
+
+                    <label>Punkt końcowy
+                        <select name="punkt-koncowy">
+                            <option value="OS">OS</option>
+                            <option value="PFS">PFS</option>
+                            <option value="DFS">DFS</option>
+                            <option value="EFS">EFS</option>
+                            <option value="ORR">ORR</option>
+                            <option value="MMR">MMR</option>
+                            <option value="MRD(-)">MRD(-)</option>
+                            <option value="CCyR">CCyR</option>
+                            <option value="pCR">pCR</option>
+                        </select>
+                    </label><br/>
+
+                </div>
+
+                <div class="form-group form-group--buttons">
+                    <button type="button" class="btn prev-step">Wstecz</button>
+                    <button type="button" class="btn next-step">Dalej</button>
+                </div>
+
+            </div>
+
+            <div data-step="3">
+
+                <div class="cel-wyleczenie">
+
+                    <label>Mediana OS dla komparatora
+                        <select name="mediana-os">
+                            <option value=">12"> >12 mies. </option>
+                            <option value="<12"> &leq;12 mies.</option>
+                        </select>
+                    </label><br/>
+
+                    <label>Wynik OS - HR
+                        <input type="number" min="0" name="wynik-os-hr">
+                    </label><br/>
+
+                    <label>
+                        Czy w badaniu zastosowano cross-over?
+                        <select name="cross-over">
+                            <option value="t">TAK</option>
+                            <option value="n">NIE</option>
+                        </select>
+                    </label><br/>
+
+                    <label>Wynik OS - mediana
+                        <input type="number" min="0" name="wynik-os-mediana">
+                    </label><br/>
+
+                    <label>Mediana PFS dla komparatora
+                        <select name="mediana-pfs">
+                            <option value=">6"> >6 mies. </option>
+                            <option value="<6"> &leq;6 mies.</option>
+                        </select>
+                    </label><br/>
+
+                    <label>Wynik PFS-HR
+                        <input type="text">
+                    </label><br/>
+
+                    <label>Wynik PFS-Mediana
+                        <input type="text">
+                    </label><br/>
+
+                </div>
+
+                <div class="form-group form-group--buttons">
+                    <button type="button" class="btn prev-step">Wstecz</button>
+                    <button type="button" class="btn next-step">Dalej</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

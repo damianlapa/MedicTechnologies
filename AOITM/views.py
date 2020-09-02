@@ -47,7 +47,7 @@ class Login(View):
             return redirect('landing-page')
 
         else:
-            return redirect('register')
+            return redirect('login')
 
 
 class Logout(View):
@@ -143,3 +143,6 @@ class ValidateAccount(View):
                 return redirect('landing-page')
 
 
+class NewTechnology(View):
+    def get(self, request):
+        return render(request, 'new-tech.html')

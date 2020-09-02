@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 6;
+            // this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 6;
 
 
             this.$step.parentElement.hidden = this.currentStep >= 6;
@@ -350,18 +350,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const csrftoken = getCookie('csrftoken');
     const passwordToEdit = document.querySelector('.edit-password')
-    console.log(passwordToEdit)
-    passwordToEdit.addEventListener('keyup', function (event){
-        $.ajax({
-            url: '/password-confirmation',
-            data: {'password': this.children[0].value, 'csrfmiddlewaretoken': csrftoken},
-            type: 'POST',
-            dataType: 'json'
-        }).done(function (data){
-            if (data === 'correct-password') {
-                const editButton = document.querySelector('.edit-button')
-                editButton.disabled = false
+    if (passwordToEdit !== null) {
+        passwordToEdit.addEventListener('keyup', function (event) {
+            $.ajax({
+                url: '/password-confirmation',
+                data: {'password': this.children[0].value, 'csrfmiddlewaretoken': csrftoken},
+                type: 'POST',
+                dataType: 'json'
+            }).done(function (data) {
+                if (data === 'correct-password') {
+                    const editButton = document.querySelector('.edit-button')
+                    editButton.disabled = false
+                }
+            })
+        })
+    }
+
+    const chorobaur = document.querySelector('.choroba-ultrarzadka')
+    if (chorobaur !== null) {
+        const epidemiologia = document.querySelector('.epidemiologia')
+        chorobaur.addEventListener('click', function () {
+            if (chorobaur.value === 't') {
+                epidemiologia.style.display = 'inline'
+            }
+            else {
+                epidemiologia.style.display = 'none'
             }
         })
-    })
+    }
 });
