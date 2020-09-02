@@ -9,187 +9,620 @@
 
     <section class="form--steps">
 
-    <div class="form--steps-container">
-        <div class="form--steps-counter">Krok <span>1</span>/5</div>
+        <div class="form--steps-container">
+            <div class="form--steps-counter">Krok <span>1</span>/5</div>
 
-        <form style="display: block" class="form-new-tech">
+            <form style="display: block" class="form-new-tech">
 
-            <div data-step="1" class="active" >
+                <div data-step="1" class="active">
 
-                <label ><h3>Jaki jest cel terapii?</h3>
-                    <select name="cel">
-                        <option value="wyleczenie"><h3>Wyleczenie</h3></option>
-                        <option value="nie-wyleczenie"><h3>Nie-wyleczenie</h3></option>
-                    </select>
-                </label>
+                    <label><h3>Jaki jest cel terapii?</h3>
+                        <select name="cel">
+                            <option value="wyleczenie"><h3>Wyleczenie</h3></option>
+                            <option value="nie-wyleczenie"><h3>Nie-wyleczenie</h3></option>
+                        </select>
+                    </label>
 
 
-                <div class="form-group form-group--buttons">
-                    <button type="button" class="btn next-step">Dalej</button>
-                </div>
-            </div>
-
-            <div data-step="2" class="">
-
-                <div class="interwencja" style="border-style: double">
-
-                    <h3>Interwencja</h3>
-
-                    <label>Nazwa Handlowa:
-                        <input type="text" name="nazwa-handlowa">
-                    </label><br/>
-
-                    <label>Nazwa Substancji:
-                        <input type="text" name="nazwa-substancji">
-                    </label><br/>
-
+                    <div class="form-group form-group--buttons">
+                        <button type="button" class="btn next-step">Dalej</button>
+                    </div>
                 </div>
 
-                <label>Komparator:
-                    <input type="text" name="komparator">
-                </label><br/>
+                <div data-step="2" class="">
 
-                <label>Obszar Terapeutyczny:
-                    <input type="radio" name="obszar-terapeutyczny" value="onkologia">Onkologia
-                    <input type="radio" name="obszar-terapeutyczny" value="hematoonkologia">Hematoonkologia
-                </label><br/>
+                    <div class="interwencja" style="border-style: double">
 
-                <label>Opis krótki:
-                    <textarea name="opis-k"></textarea>
-                </label><br/>
+                        <h3>Interwencja</h3>
 
-                <label>Opis długi:
-                    <textarea name="opis-k" id="opis-d"></textarea>
-                </label><br/>
+                        <label>Nazwa Handlowa:
+                            <input type="text" name="nazwa-handlowa">
+                        </label><br/>
 
-                <label>Choroba Ultra-rzadka?
-                    <select name="choroba-ultrarzadka" class="choroba-ultrarzadka">
-                        <option value="t">Tak</option>
-                        <option value="n">Nie</option>
-                    </select>
-                </label><br/>
+                        <label>Nazwa Substancji:
+                            <input type="text" name="nazwa-substancji">
+                        </label><br/>
 
-                <label class="epidemiologia">Epidemiologia:
-                    <textarea name="epidemiologia"></textarea>
-                </label><br/>
+                    </div>
 
-                <label>5-letnie przezycie
-                    <input type="number" name="przezycie-5" min="0" max="100" placeholder="0">%
-                </label><br/>
+                    <label>Komparator:
+                        <input type="text" name="komparator">
+                    </label><br/>
 
-                <label>Ostatnia linia leczenia?
-                    <select name="ostatnia-linia">
-                        <option value="t">Tak</option>
-                        <option value="n">Nie</option>
-                    </select>
-                </label><br/>
+                    <label>Obszar Terapeutyczny:
+                        <input type="radio" name="obszar-terapeutyczny" value="onkologia">Onkologia
+                        <input type="radio" name="obszar-terapeutyczny" value="hematoonkologia">Hematoonkologia
+                    </label><br/>
 
-                <label>Stopień zaspokojenia potrzeby zdrowotnej
-                    <select name="stopien-zaspokojenia">
-                        <option value="NIEZASPOKOJONA">NIEZASPOKOJONA</option>
-                        <option value=">CZĘŚCIOWO ZASPOKOJONA">>CZĘSCIOWO ZASPOKOJONA</option>
-                        <option value="CZĘŚCIOWO ZASPOKOJONA">&lt;CZĘSCIOWO ZASPOKOJONA</option>
-                        <option value="ZASPOKOJONA">ZASPOKOJONA</option>
+                    <label>Opis krótki:
+                        <textarea name="opis-k"></textarea>
+                    </label><br/>
 
-                    </select>
-                </label><br/>
+                    <label>Opis długi:
+                        <textarea name="opis-k" id="opis-d"></textarea>
+                    </label><br/>
 
-                <label>Uzasadnienie:
-                    <textarea name="uzasadnienie"></textarea>
-                </label><br/>
-
-                <div style="border-style: double">
-
-                    <h3>Badanie na podstawie którego będzie dokonywana ocena</h3>
-
-                    <label>Rodzaj badania
-                        <select name="rodzaj-badania">
-                            <option value="RCT">RCT</option>
-                            <option value="Badanie jednoramienne">Badanie jednoramienne</option>
-                            <option value="Porównanie pośrednie">Porównanie pośrednie</option>
+                    <label>Choroba Ultra-rzadka?
+                        <select name="choroba-ultrarzadka" class="choroba-ultrarzadka">
+                            <option value="t">Tak</option>
+                            <option value="n">Nie</option>
                         </select>
                     </label><br/>
 
-                    <label>Nazwa:
-                        <textarea name="nazwa"></textarea>
+                    <label class="epidemiologia">Epidemiologia:
+                        <textarea name="epidemiologia"></textarea>
                     </label><br/>
 
-                    <label>Punkt końcowy
-                        <select name="punkt-koncowy">
-                            <option value="OS">OS</option>
-                            <option value="PFS">PFS</option>
-                            <option value="DFS">DFS</option>
-                            <option value="EFS">EFS</option>
-                            <option value="ORR">ORR</option>
-                            <option value="MMR">MMR</option>
-                            <option value="MRD(-)">MRD(-)</option>
-                            <option value="CCyR">CCyR</option>
-                            <option value="pCR">pCR</option>
+                    <label>5-letnie przezycie
+                        <input type="number" name="przezycie-5" min="0" max="100" placeholder="0">%
+                    </label><br/>
+
+                    <label>Ostatnia linia leczenia?
+                        <select name="ostatnia-linia">
+                            <option value="t">Tak</option>
+                            <option value="n">Nie</option>
                         </select>
                     </label><br/>
 
-                </div>
+                    <label>Stopień zaspokojenia potrzeby zdrowotnej
+                        <select name="stopien-zaspokojenia">
+                            <option value="NIEZASPOKOJONA">NIEZASPOKOJONA</option>
+                            <option value=">CZĘŚCIOWO ZASPOKOJONA">>CZĘSCIOWO ZASPOKOJONA</option>
+                            <option value="CZĘŚCIOWO ZASPOKOJONA">&lt;CZĘSCIOWO ZASPOKOJONA</option>
+                            <option value="ZASPOKOJONA">ZASPOKOJONA</option>
 
-                <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
-                </div>
-
-            </div>
-
-            <div data-step="3">
-
-                <div class="cel-wyleczenie">
-
-                    <label>Mediana OS dla komparatora
-                        <select name="mediana-os">
-                            <option value=">12"> >12 mies. </option>
-                            <option value="<12"> &leq;12 mies.</option>
                         </select>
                     </label><br/>
 
-                    <label>Wynik OS - HR
-                        <input type="number" min="0" name="wynik-os-hr">
+                    <label>Uzasadnienie:
+                        <textarea name="uzasadnienie"></textarea>
                     </label><br/>
+
+                    <div style="border-style: double">
+
+                        <h3>Badanie na podstawie którego będzie dokonywana ocena</h3>
+
+                        <label>Rodzaj badania
+                            <select name="rodzaj-badania">
+                                <option value="RCT">RCT</option>
+                                <option value="Badanie jednoramienne">Badanie jednoramienne</option>
+                                <option value="Porównanie pośrednie">Porównanie pośrednie</option>
+                            </select>
+                        </label><br/>
+
+                        <label>Nazwa:
+                            <textarea name="nazwa"></textarea>
+                        </label><br/>
+
+                        <label>Punkt końcowy
+                            <select name="punkt-koncowy">
+                                <option value="OS">OS</option>
+                                <option value="PFS">PFS</option>
+                                <option value="DFS">DFS</option>
+                                <option value="EFS">EFS</option>
+                                <option value="ORR">ORR</option>
+                                <option value="MMR">MMR</option>
+                                <option value="MRD(-)">MRD(-)</option>
+                                <option value="CCyR">CCyR</option>
+                                <option value="pCR">pCR</option>
+                            </select>
+                        </label><br/>
+
+                    </div>
+
+                    <div class="form-group form-group--buttons">
+                        <button type="button" class="btn prev-step">Wstecz</button>
+                        <button type="button" class="btn next-step">Dalej</button>
+                    </div>
+
+                </div>
+
+                <div data-step="3">
+
+                    <div class="cel-wyleczenie" style="text-align: center">
+
+                        <table>
+
+                            <tbody>
+
+                            <tr>
+                                <td>
+
+                                    <label>Mediana OS dla komparatora
+                                        <select name="mediana-os">
+                                            <option value=">12"> >12 mies.</option>
+                                            <option value="<12"> &leq;12 mies.</option>
+                                        </select>
+                                    </label><br/>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+
+                                    <label>Wynik OS - HR
+                                        <input type="number" min="0" name="wynik-os-hr">
+                                    </label><br/>
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+
+                                    <label>
+                                        Czy w badaniu zastosowano cross-over?
+                                        <select name="cross-over">
+                                            <option value="t">TAK</option>
+                                            <option value="n">NIE</option>
+                                        </select>
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik OS - mediana
+                                        <input type="number" min="0" name="wynik-os-mediana">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Mediana PFS dla komparatora
+                                        <select name="mediana-pfs">
+                                            <option value=">6"> >6 mies.</option>
+                                            <option value="<6"> &leq;6 mies.</option>
+                                        </select>
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik PFS-HR
+                                        <input type="text">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik PFS-Mediana
+                                        <input type="text">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <div class="nie-wyleczenie">
+
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <label>Follow-Up
+                                        <select name="follow-up">
+                                            <option value="3">&geq;3 lata</option>
+                                            <option value="5">&geq;5 lat</option>
+                                        </select>
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Wynik OS-HR
+                                        <input name="wynik-os-hr" type="number">
+                                    </label>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Poprawa w zakresie przeźyć
+                                        <input type="number" name="poprawa-przezyc">%
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Czy w badaniu zastosowano cross-over?
+                                        <select name="cross-over">
+                                            <option value="t">TAK</option>
+                                            <option value="n">NIE</option>
+                                        </select>
+                                    </label></td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik OS - mediana
+                                        <input type="number" min="0" name="wynik-os-mediana">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik DFS/RFS/EFS - HR
+                                        <input type="number" min="0" name="wynik-dfs-rfs-efs-hr">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik ORR/MMR/CCyR/MRD(-) - ramię interwencji
+                                        <input type="number" min="0" name="wynik-r-inter">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik ORR/MMR/CCyR/MRD(-) - ramię komparatora
+                                        <input type="number" min="0" name="wynik-r-komp">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik ORR/MMR/CCyR/MRD(-) - różnica
+                                        <input type="number" min="0" name="wynik-roznica">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>NNT
+                                        <input type="number" min="0" name="nnt">
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Jakość życia:
+                                        <select name="jakosc-zycia">
+                                            <option value="1">Istotna statystycznie i klinicznie poprawa w
+                                                całkowitej QoL, pomiar zwalidowaną skalą
+                                            </option>
+                                            <option value="3">Istotna
+                                                statystycznie i klinicznie poprawa w większości
+                                                aspektów (podskal) QoL, pomiar zwalidowaną skalą
+                                            </option>
+                                            <option value="4">Istotna statystycznie i klinicznie poprawa w
+                                                niektórych aspektach QoL, pomiar zwalidowaną
+                                                skalą LUB istotna statystycznie poprawa w
+                                                całkowitej QoL, brak pomiaru zwalidowaną skalą
+                                            </option>
+                                            <option value="5">Istotna statystycznie i klinicznie poprawa w
+                                                niektórych aspektach QoL, brak pomiaru
+                                                zwalidowaną skalą
+                                            </option>
+                                            <option value="6">Brak istotnej statystycznie i
+                                                klinicznie poprawy w QoL LUB Brak oceny QoL
+                                            </option>
+                                            <option value="7">Istotne statystycznie i klinicznie pogorszenie w
+                                                niektórych aspektach QoL, brak pomiaru
+                                                zwalidowaną skalą
+                                            </option>
+                                            <option value="8">Istotne statystycznie i klinicznie
+                                                pogorszenie w niektórych aspektach QoL, pomiar
+                                                zwalidowaną skalą LUB istotne statystycznie
+                                                pogorszenie w całkowitej QoL, brak pomiaru
+                                                zwalidowaną skalą /
+                                            </option>
+                                            <option value="9">Istotna statystycznie i
+                                                klinicznie pogorszenie w większości aspektów
+                                                (podskal) QoL, pomiar zwalidowaną skalą
+                                            </option>
+                                            <option value="10">Istotne
+                                                statystycznie i klinicznie pogorszenie w całkowitej
+                                            </option>
+                                        </select>
+                                    </label><br/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+
+                                    <label>Wynik ORR/pCR
+                                        <input type="number" min="0" name="wynik-orr">
+                                    </label>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                    <div class="dodatkowe">
+                        <label>Ocena profilu bezpieczeństwa(dyskontujące z powodu AE/AE związanych z leczeniem)
+                            <select name="ocena-profilu1">
+                                <option value="1">istotna statystycznie poprawa w zakresie
+                                    zgonów z powodu AE/AE związanych z
+                                    leczeniem
+                                </option>
+                                <option value="2">brak istotnych statystycznie różnic w
+                                    zakresie występowania zgonów z powodu
+                                    AE/AE związanych z leczeniem LUB brak
+                                    danych
+                                </option>
+                                <option value="3">istotne statystycznie pogorszenie w
+                                    zakresie zgonów z powodu AE związanych z
+                                    leczeniem LUB zgonów z powodu AE
+                                </option>
+                            </select>
+                        </label><br/>
+
+                        <label>Dodatkowe punkty oceny
+                            <select name="ocena-profilu2">
+                                <option value="1">≥5% przewaga na korzyść terapii ocenianej w
+                                    odsetkach
+                                </option>
+                                <option value="2">≥3% przewaga na korzyść terapii
+                                    ocenianej w odsetkach
+                                </option>
+                                <option value="3">brak znaczącej
+                                    przewagi/pogorszenia w zakresie odsetka
+                                </option>
+                                <option value="4">≥10% pogorszenie w zakresie odsetków zgonów
+                                    z powodu
+                                </option>
+                            </select>
+                        </label><br/>
+
+                        <label>Profil bezpieczeństwa – zgony z powodu AE / AE związane z leczeniem
+                            <textarea></textarea>
+                        </label><br/>
+
+                        <label>Ocena profilu bezpieczeństwa (występowanie zgonów z powodu AE/AE związanych z leczeniem)
+                            <select name="ocena-profilu3">
+                                <option value="1">brak zgonu z powodu AE związanych z
+                                    leczeniem LUB <1% zgonów z powodu AE
+                                </option>
+                                <option value="2">≤1% zgonów z powodu AE związanych z
+                                    leczeniem LUB ≤3% zgonów z powodu AE
+                                </option>
+                                <option value="3">≤3% zgonów z powodu AE związanych z
+                                    leczeniem LUB ≤6% zgonów z powodu AE
+                                </option>
+                                <option value="4">≤5% zgonów z powodu AE związanych z
+                                    leczeniem LUB ≤10 zgonów z powodu AE
+                                </option>
+                                <option value="5">>5% zgonów z powodu AE związanych z
+                                    leczeniem LUB >10% zgonów z powodu AE
+                                </option>
+                            </select>
+                        </label><br/>
+
+                        <label>Dodatkowe punkty oceny
+                            <select name="ocena-profilu4">
+                                <option value="1">≥10% przewaga na korzyść terapii ocenianej w
+                                    odsetkach
+                                </option>
+                                <option value="2">≥5% przewaga na korzyść terapii
+                                    ocenianej w odsetkach
+                                </option>
+                                <option value="3">brak znaczącej
+                                    przewagi/pogorszenia w zakresie odsetka
+                                </option>
+                                <option value="4">≥20% pogorszenie w zakresie odsetków
+                                    dyskontynuacji
+                                </option>
+                            </select>
+                        </label><br/>
+
+                        <label>Profil bezpieczeństwa
+                            – dyskontynuacje z
+                            powodu AE/AE
+                            związanych z
+                            leczeniem
+                            <textarea></textarea>
+                        </label><br/>
+                        <label>Ocena profilu
+                            bezpieczeństwa
+                            (występowanie
+                            zgonów z powodu
+                            AE/AE związanych z
+                            leczeniem)
+                            <select name="ocena-profilu3">
+                                <option value="1">brak zgonu z powodu AE związanych z
+                                    leczeniem LUB <1% zgonów z powodu AE
+                                </option>
+                                <option value="2">≤1% zgonów z powodu AE związanych z
+                                    leczeniem LUB ≤3% zgonów z powodu AE
+                                </option>
+                                <option value="3">≤3% zgonów z powodu AE związanych z
+                                    leczeniem LUB ≤6% zgonów z powodu AE
+                                </option>
+                                <option value="4">≤5% zgonów z powodu AE związanych z
+                                    leczeniem LUB ≤10 zgonów z powodu AE
+                                </option>
+                                <option value="5">>5% zgonów z powodu AE związanych z
+                                    leczeniem LUB >10% zgonów z powodu AE
+                                </option>
+                            </select>
+                        </label><br/>
+                        <label>Profil bezpieczeństwa
+                            – zgony z powodu AE
+                            / AE związane z
+                            leczeniem
+                            <textarea></textarea>
+                        </label><br/>
+                        <label>Ocena profilu
+                            bezpieczeństwa
+                            (dyskontynuacje z
+                            powodu AE/AE
+                            związanych z
+                            leczeniem)
+                            <select name="ocena-profilu3">
+                                <option value="1">brak dyskontynuacji leczenia z powodu AE
+                                    związanych z leczeniem LUB <3%
+                                    dyskontynuacji leczenia z powodu AE
+                                </option>
+                                <option value="2">≤2%
+                                    dyskontynuacji leczenia z powodu AE
+                                    związanych z leczeniem LUB ≤5%
+                                    dyskontynuacji leczenia z powodu AE
+                                </option>
+                                <option value="3">≤4%
+                                    dyskontynuacji leczenia z powodu AE
+                                    związanych z leczeniem LUB ≤10%
+                                    dyskontynuacji leczenia z powodu AE
+                                </option>
+                                <option value="4">≤7%
+                                    dyskontynuacji leczenia z powodu AE
+                                    związanych z leczeniem LUB ≤15%
+                                    dyskontynuacji leczenia z powodu AE
+                                </option>
+                                <option value="5">≤10%
+                                    dyskontynuacji leczenia z powodu AE
+                                    związanych z leczeniem LUB ≤20%
+                                    dyskontynuacji leczenia z powodu AE
+                                </option>
+                                <option value="6">>10%
+                                    dyskontynuacji leczenia z powodu AE
+                                    związanych z leczeniem LUB >20%
+                                    dyskontynuacji leczenia z powodu AE
+                                </option>
+                            </select>
+                        </label><br/>
+                        <label>Profil bezpieczeństwa
+                            – zgony z powodu AE
+                            / AE związane z
+                            leczeniem
+                            <textarea></textarea>
+                        </label><br/>
+                    </div>
+
+                    <div class="form-group form-group--buttons">
+                        <button type="button" class="btn prev-step">Wstecz</button>
+                        <button type="button" class="btn next-step">Dalej</button>
+                    </div>
+                </div>
+
+                <div data-step="4" class="">
 
                     <label>
-                        Czy w badaniu zastosowano cross-over?
-                        <select name="cross-over">
-                            <option value="t">TAK</option>
-                            <option value="n">NIE</option>
+                        Dostępność dowodów naukowych
+                        <select name="dostep-dowodow">
+                            <option value="1>">Publikacja pełnotekstowa</option>
+                            <option value="2>">Abstrakt lub
+                                doniesienie konferencyjne
+                            </option>
+                            <option value="3>">Doniesienia nieopublikowane</option>
                         </select>
-                    </label><br/>
+                    </label>
 
-                    <label>Wynik OS - mediana
-                        <input type="number" min="0" name="wynik-os-mediana">
-                    </label><br/>
+                    <div style="border-style: double">
+                        <h3>Wiarygodność dowodów(zgodnie z NICE)</h3>
 
-                    <label>Mediana PFS dla komparatora
-                        <select name="mediana-pfs">
-                            <option value=">6"> >6 mies. </option>
-                            <option value="<6"> &leq;6 mies.</option>
-                        </select>
-                    </label><br/>
+                        <label>Czy badanie było wieloośrodkowe?
+                            <select>
+                                <option value="t">TAK</option>
+                                <option value="n">NIE</option>
+                            </select>
+                        </label><br/>
 
-                    <label>Wynik PFS-HR
-                        <input type="text">
-                    </label><br/>
+                        <label>Czy kryteria włączenia i
+                            wykluczenia pacjentów są
+                            sprecyzowane?
+                            <select>
+                                <option value="t">TAK</option>
+                                <option value="n">NIE</option>
+                            </select>
+                        </label><br/>
 
-                    <label>Wynik PFS-Mediana
-                        <input type="text">
-                    </label><br/>
+                        <label>Czy punkty końcowe są jasno
+                            zdefiniowane?
+                            <select>
+                                <option value="t">TAK</option>
+                                <option value="n">NIE</option>
+                            </select>
+                        </label><br/>
+
+                        <label>Czy dane przeanalizowano
+                            poprawnie?
+                            <select>
+                                <option value="t">TAK</option>
+                                <option value="n">NIE</option>
+                            </select>
+                        </label><br/>
+
+                        <label>Czy w opisie badania znajduje
+                            się stwierdzenie, że pacjenci byli
+                            włączani kolejno?
+                            <select>
+                                <option value="t">TAK</option>
+                                <option value="n">NIE</option>
+                            </select>
+                        </label><br/>
+
+                        <label>Czy opisano jasno wyniki
+                            badania?
+                            <select>
+                                <option value="t">TAK</option>
+                                <option value="n">NIE</option>
+                            </select>
+                        </label><br/>
+
+                        <label>Czy wyniki przedstawiono w
+                            podziale na podgrupy pacjentów
+                            (np. wg stopnia zaawansowania
+                            choroby, charakterystyk
+                            pacjentów, innych czynników)?
+                            <select>
+                                <option value="t">TAK</option>
+                                <option value="n">NIE</option>
+                            </select>
+                        </label><br/>
+
+                    </div>
+
+
+                    <div class="form-group form-group--buttons">
+                        <button type="button" class="btn prev-step">Wstecz</button>
+                        <button type="button" class="btn next-step">Dalej</button>
+                    </div>
 
                 </div>
 
-                <div class="form-group form-group--buttons">
-                    <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
-                </div>
-            </div>
 
-
-        </form>
-    </div>
+            </form>
+        </div>
     </section>
 </div>
 {% endblock %}
